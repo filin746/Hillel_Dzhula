@@ -77,6 +77,22 @@ def delete_dj(data):
             return data.pop(i)
 
 
+def update_dj(data):
+    dj_name_input = input("Enter update DJ's namer: ")
+    for i in range(len(data)):
+        dj = data[i]
+        dj_name = dj["name"]
+        if dj_name_input == dj_name:
+            update_dj_data = {
+                input("name: "),
+                input("age: "),
+                input("equipment: "),
+                input("discography: "),
+                input("salary: "),
+                input("genry: "),
+        }
+            data.append(update_dj_data)
+            return update_dj_data
 
 if __name__ == "__main__":
     djs = [tiesto, avicci, anna]
@@ -103,7 +119,7 @@ if __name__ == "__main__":
             print("Select DJ")
             update_dj = update_dj(djs)
             if update_dj:
-                print(f"dj {update_dj['name']} update")
+                pprint(djs)
         elif desision == "exit":
             print("Exiting...")
             break
