@@ -69,12 +69,12 @@ def add_dj(data):
 
 
 def delete_dj(data):
-    user_input = input("Enter deleted DJ's names: ")
-    djs = [tiesto, avicci, anna]
-    dj_data = user_input.split(",")
-    validated_data = validate_dj_data(dj_data)
-
-
+    dj_name_input = input("Enter deleted DJ's names: ")
+    for i in range(len(data)):
+        dj = data[i]
+        dj_name = dj["name"]
+        if dj_name_input == dj_name:
+            return data.pop(i)
 
 
 
